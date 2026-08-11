@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
+import { getAccessToken } from '../utils/session.js';
+import { useUser } from '../composables/useUser.js';
+
 import LoginView from '../views/LoginView.vue';
 import TodoView from '../views/TodoView.vue';
 import DashboardView from '../views/DashboardView.vue';
-import { getAccessToken } from '../utils/session.js';
-import { useUser } from '../composables/useUser.js';
+import RegisterView from '../views/RegisterView.vue';
 
 const { userRole } = useUser();
 
@@ -19,6 +21,10 @@ const router = createRouter({
         {
             path: '/login',
             component: LoginView
+        },
+        {
+            path: '/register',
+            component: RegisterView
         },
         {
             path: '/todo',

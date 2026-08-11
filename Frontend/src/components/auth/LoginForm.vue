@@ -14,12 +14,10 @@ const password = ref('');
 
 async function handleLogin() {
     try {
-        console.log('login acionado')
         const result = await login(username.value, password.value);
         authLogin(result);
         router.push("/todo");
-        
-        console.log('login terminado')
+
     } catch (error) {
         console.error(error);
     }
@@ -27,7 +25,7 @@ async function handleLogin() {
 </script>
 
 <template>
-    <div class="w-full max-w-md rounded-2xl bg-slate-900 p-8 shadow-2xl">
+    <div class="w-full max-w-md rounded-2xl bg-slate-900 p-8 shadow-2xl flex flex-col">
         <h1 class="mb-8 text-center text-3xl font-bold text-white">
             Login
         </h1>
@@ -39,5 +37,9 @@ async function handleLogin() {
 
             <BaseButton type="submit" class="w-full"> Entrar </BaseButton>
         </form>
+
+        <span class=" text-white text-sm text-center mt-4">Não possui uma conta?
+            <RouterLink to="/register" class="text-violet-500">Registre-se</RouterLink to="/register">
+        </span>
     </div>
 </template>

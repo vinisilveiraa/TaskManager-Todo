@@ -9,5 +9,13 @@ export async function login(userName, password) {
 }
 
 export async function logoutApi() {
-    await api.post("/Auth/logout"); 
+    await api.post("/Auth/logout");
+}
+
+export async function register(username, password) {
+    const response = await api.post("/Auth/register", {
+        username, password
+    });
+
+    return response.data
 }

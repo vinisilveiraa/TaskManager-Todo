@@ -39,15 +39,20 @@ async function handleLogout() {
                     Dashboard
                 </RouterLink>
 
-                <RouterLink v-if="!isAuthenticated" to="/login"
-                    class="rounded-lg text-white bg-violet-600 px-4 py-2 hover:bg-violet-500 transition">
-                    Login
-                </RouterLink>
-
-                <button v-else @click="handleLogout"
-                    class="rounded-lg text-white bg-red-600 px-4 py-2 hover:bg-red-500 transition">
-                    Logout
-                </button>
+                <div class="flex gap-2">
+                    <RouterLink v-if="!isAuthenticated" to="/register"
+                        class="rounded-lg text-white bg-violet-600 px-4 py-2 hover:bg-violet-500 transition">
+                        Registrar
+                    </RouterLink>
+                    <RouterLink v-if="!isAuthenticated" to="/login"
+                        class="rounded-lg text-white bg-violet-600 px-4 py-2 hover:bg-violet-500 transition">
+                        Login
+                    </RouterLink>
+                    <button v-else @click="handleLogout"
+                        class="rounded-lg text-white bg-red-600 px-4 py-2 hover:bg-red-500 transition">
+                        Logout
+                    </button>
+                </div>
             </div>
         </div>
 

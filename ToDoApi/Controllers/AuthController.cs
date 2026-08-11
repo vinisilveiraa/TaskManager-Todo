@@ -38,6 +38,7 @@ namespace ToDoApi.Controllers
                 return Unauthorized(new { message = "Invalid credentials" });
             return Ok(result);
         }
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterRequestDto user)
         {

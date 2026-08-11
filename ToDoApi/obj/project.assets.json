@@ -3371,11 +3371,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MeusProjetos\\ToDoApi\\ToDoApi\\ToDoApi.csproj",
+      "projectUniqueName": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\ToDoApi.csproj",
       "projectName": "ToDoApi",
-      "projectPath": "C:\\MeusProjetos\\ToDoApi\\ToDoApi\\ToDoApi.csproj",
+      "projectPath": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\ToDoApi.csproj",
       "packagesPath": "C:\\Users\\vinik\\.nuget\\packages\\",
-      "outputPath": "C:\\MeusProjetos\\ToDoApi\\ToDoApi\\obj\\",
+      "outputPath": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
