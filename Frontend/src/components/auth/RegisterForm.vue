@@ -37,7 +37,7 @@ async function handleRegister() {
 
 <template>
     <div class="w-full max-w-md rounded-2xl bg-slate-900 p-8 shadow-2xl flex flex-col">
-        <h1 class="mb-8 text-center text-3xl font-bold text-white">
+        <h1 class="mb-8 text-center text-3xl font-bold ">
             Registre-se
         </h1>
 
@@ -55,8 +55,8 @@ async function handleRegister() {
             <BaseButton type="submit" class="w-full"> Registrar </BaseButton>
         </form>
 
-        <span class=" text-white text-sm text-center mt-4">Já possui uma conta? Faça seu
-            <RouterLink to="/register" class="text-violet-500">Login</RouterLink to="/register">
+        <span class="  text-sm text-center mt-4">Já possui uma conta?
+            <RouterLink to="/register" class="text-violet-500">Entrar</RouterLink to="/register">
         </span>
     </div>
 </template>

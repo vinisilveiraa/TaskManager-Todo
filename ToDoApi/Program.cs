@@ -24,6 +24,7 @@ builder.Services.AddScoped<ItemRepository>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<RefreshTokenRepository>();
 builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<FileService>();
 builder.Services.AddScoped<PasswordHashService>();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -94,6 +95,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.UseStaticFiles(); // para servir arquivos estáticos, como imagens de avatar
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

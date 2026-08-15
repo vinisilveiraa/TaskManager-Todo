@@ -1,6 +1,5 @@
 <script setup>
 defineProps({
-    active: Boolean,
     icon: String,
     active: {
         type: Boolean,
@@ -32,7 +31,7 @@ const variants = {
 
 </script>
 <template>
-    <span :class="['flex items-center justify-center gap-0.5 rounded-full px-3 py-1 text-sm text-white transition',
+    <span :class="['flex items-center justify-center gap-0.5 rounded-full px-3 py-1 text-sm  transition',
         variants[variant] ?? variants.primary
     ]">
 

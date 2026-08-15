@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ToDoApi.DTOs.User;
+using ToDoApi.Helpers;
 using ToDoApi.Models;
 using ToDoApi.Repositories;
+using ToDoApi.Services;
 
 namespace ToDoApi.Controllers
 {
@@ -11,9 +14,11 @@ namespace ToDoApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly UserRepository _repository;
-        public UserController(UserRepository repository)
+        private readonly FileService _fileService;
+        public UserController(UserRepository repository, FileService fileService)
         {
             _repository = repository;
+            _fileService = fileService;
         }
 
         [HttpGet]
@@ -57,6 +62,54 @@ namespace ToDoApi.Controllers
 
             await _repository.UpdateAsync(id, user);
             return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
+        }
+        [HttpPost("avatar")]
+        public async Task<IActionResult> UploadAvatar(IFormFile file)
+        {
+            var userId = User.GetUserId();
+            var user = await _repository.GetByIdAsync(userId);
+
+            if (user == null)
+                return NotFound($"User with ID {userId} not found.");
+
+            try
+            {
+                var currentAvatar = user.AvatarUrl;
+
+                var avatarUrl = await _fileService.SaveAvatarAsync(file);
+                user.AvatarUrl = avatarUrl;
+
+                await _repository.UpdateAsync(userId, user);
+
+                if (currentAvatar != null)
+                    await _fileService.DeleteAvatarAsync(currentAvatar);
+
+                return Ok(new { AvatarUrl = avatarUrl });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("me")]
+        public async Task<IActionResult> GetCurrentUser()
+        {
+            var userId = User.GetUserId();
+            var user = await _repository.GetByIdAsync(userId);
+
+            if (user == null)
+                return NotFound($"User with ID {userId} not found.");
+
+            var response = new CurrentUserResponseDTO
+            {
+                Id = userId,
+                UserName = user.UserName,
+                AvatarUrl = user.AvatarUrl,
+                Role = user.Role,
+                Created_At = user.Created_At
+            };
+
+            return Ok(response);
         }
     }
 }

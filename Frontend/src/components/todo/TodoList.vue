@@ -42,7 +42,7 @@ onMounted(loadMyItems)
 
 <template>
     <div class="mx-auto mt-8 w-full max-w-4xl rounded-xl rounded-b-none bg-slate-900 shadow-lg">
-        <table class="w-full text-white">
+        <table class="w-full ">
 
             <thead class="border-b border-slate-700">
                 <tr>
@@ -57,8 +57,7 @@ onMounted(loadMyItems)
             <tbody>
                 <TodoItem v-for="item in items" :key="item.id" :id="item.id" :title="item.title"
                     :description="item.description" :isCompleted="item.isCompleted" :created_at="item.created_At"
-                    :completed_at="item.completed_At" @delete="handleDelete" @patch="handlePatch"
-                    @edit="openEditModal" />
+                    @delete="handleDelete" @patch="handlePatch" @edit="openEditModal" />
             </tbody>
 
         </table>

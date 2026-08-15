@@ -1,12 +1,22 @@
 import { ref, computed } from "vue";
 import { getAccessToken } from "../utils/session";
 import { jwtDecode } from "jwt-decode";
+import { getCurrentUser, setAvatar } from '../services/userService'
 
 const user = ref(null);
 
 export function useUser() {
 
-    function initializeUser() {
+    async function loadUser() {
+        try {
+            user.value = await getCurrentUser();
+        } catch (error) {
+            console.error("Erro ao carregar usuário:", error);
+            user.value = null;
+        }
+    }
+
+    async function initializeUser() {
         const token = getAccessToken();
 
         if (!token) {
@@ -15,19 +25,8 @@ export function useUser() {
         }
 
         try {
-            user.value = jwtDecode(token);
+            await loadUser();
         } catch {
-            user.value = null;
-        }
-
-        user.value = jwtDecode(token);
-    }
-
-    function setUser(token) {
-        try {
-            user.value = jwtDecode(token);
-        }
-        catch {
             user.value = null;
         }
     }
@@ -36,38 +35,43 @@ export function useUser() {
         user.value = null;
     }
 
-    const userId = computed(() => {
-        return user.value?.["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"];
-    });
+    const userId = computed(() => user.value?.id);
+    const userName = computed(() => user.value?.userName);
+    const userRole = computed(() => user.value?.role);
+    const avatarUrl = computed(() => user.value?.avatarUrl);
 
-    const userName = computed(() => {
-        return user.value?.["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
-    });
+    const isAdmin = computed(() => userRole.value === 1);
+    const isAuthenticated = computed(() => user.value !== null);
 
-    const userRole = computed(() => {
-        return user.value?.["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-    });
+    const userRoleString = computed(() =>
+        userRole.value === 1 ? "Admin" : userRole.value === 0 ? "User" : "Guest"
+    );
 
-    const isAdmin = computed(() => {
-        return userRole.value === "Admin";
-    });
-
-    const isAuthenticated = computed(() => {
-        return user.value !== null
-    })
+    async function updateAvatar(file) {
+        try {
+            await setAvatar(file);
+            await loadUser();
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     return {
         user,
 
+        loadUser,
+        initializeUser,
+        clearUser,
+
         userId,
         userName,
         userRole,
+        avatarUrl,
+        userRoleString,
 
         isAdmin,
         isAuthenticated,
 
-        initializeUser,
-        setUser,
-        clearUser,
-    }
+        updateAvatar,
+    };
 }

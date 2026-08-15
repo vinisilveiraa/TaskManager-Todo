@@ -3,12 +3,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { getAccessToken } from '../utils/session.js';
 import { useUser } from '../composables/useUser.js';
 
+import HomeView from '../views/HomeView.vue';
 import LoginView from '../views/LoginView.vue';
 import TodoView from '../views/TodoView.vue';
 import DashboardView from '../views/DashboardView.vue';
 import RegisterView from '../views/RegisterView.vue';
+import UserProfileView from '../views/UserProfileView.vue';
 
-const { userRole } = useUser();
+const { userRole, isAuthenticated } = useUser();
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,7 +18,7 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            component: TodoView
+            component: HomeView
         },
         {
             path: '/login',
@@ -34,11 +36,18 @@ const router = createRouter({
             }
         },
         {
+            path: '/me',
+            component: UserProfileView,
+            meta: {
+                requiresAuth: true
+            }
+        },
+        {
             path: '/dashboard',
             component: DashboardView,
             meta: {
                 requiresAuth: true,
-                role: "Admin"
+                role: 1
             }
         }
     ]
@@ -52,6 +61,9 @@ router.beforeEach((to) => {
     }
     if (to.meta.role && userRole.value !== to.meta.role) {
         return "/todo";
+    }
+    if (to.path === '/') {
+        return (!isAuthenticated) ? "/login" : "/todo"
     }
 });
 

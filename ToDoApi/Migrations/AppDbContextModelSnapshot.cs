@@ -91,6 +91,9 @@ namespace ToDoApi.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AvatarUrl")
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("Created_At")
                         .HasColumnType("datetime(6)");
 
@@ -113,8 +116,8 @@ namespace ToDoApi.Migrations
                         new
                         {
                             Id = 1,
-                            Created_At = new DateTime(2026, 7, 28, 18, 24, 0, 921, DateTimeKind.Local).AddTicks(4940),
-                            Password = "$2a$13$2ZzswhFj6gs0lzwE35JuLe8r7qtoJAYYQIF7at.hq41ZnsLOW1.4y",
+                            Created_At = new DateTime(2026, 8, 14, 19, 55, 32, 358, DateTimeKind.Local).AddTicks(4127),
+                            Password = "$2a$13$LSoMeUkh1pKqYXtAfyyJ6.qEpsp4MIDGQQ9bn3y/kOx472XHeD98a",
                             Role = 1,
                             UserName = "admin"
                         });

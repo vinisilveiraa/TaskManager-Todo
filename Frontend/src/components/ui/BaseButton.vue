@@ -13,7 +13,7 @@ defineProps({
 
 <template>
     <button :type="type" :class="[
-        'rounded-lg py-3 px-3 font-semibold text-white transition flex items-center justify-center gap-2 cursor-pointer',
+        'rounded-lg py-3 px-3 font-semibold  transition flex items-center justify-center gap-2 cursor-pointer',
         variant === 'primary' && 'bg-violet-600 hover:bg-violet-500',
         variant === 'success' && 'bg-green-600 hover:bg-green-500',
         variant === 'danger' && 'bg-red-600 hover:bg-red-500',

@@ -43,8 +43,7 @@ const emit = defineEmits([
             </span>
         </td>
         <td class="p-4 text-center">
-            <span v-if="!isCompleted" class="text-slate-400 whitespace-nowrap">{{ formatDate(created_at) }}</span>
-            <span v-else class="text-slate-400 whitespace-nowrap">{{ formatDate(completed_at) }}</span>
+            <span class="text-slate-400 whitespace-nowrap">{{ formatDate(created_at) }}</span>
         </td>
 
         <td class="text-center align-middle p-2">

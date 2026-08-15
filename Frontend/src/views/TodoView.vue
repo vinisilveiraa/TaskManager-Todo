@@ -8,7 +8,7 @@ const { setQuery } = useItems();
 </script>
 
 <template>
-    <main class="flex flex-col min-h-screen items-center justify-self-auto bg-slate-950 py-10 text-white">
+    <main class="flex flex-col min-h-screen items-center justify-self-auto bg-slate-950 py-10 ">
         <TodoHeader @change="setQuery" />
         <TodoList />
     </main>

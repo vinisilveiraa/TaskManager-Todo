@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, onMounted } from 'vue'
 import { useUser } from './composables/useUser.js';
 
 const { initializeUser } = useUser();
@@ -9,7 +9,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import App from './App.vue'
 import router from './router'
 
-initializeUser();
+await initializeUser();
 
 createApp(App)
     .use(router)

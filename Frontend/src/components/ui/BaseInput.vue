@@ -32,7 +32,7 @@ const emit = defineEmits(["update:modelValue"]);
         </label>
 
         <input :value="modelValue" :type="type" @input="emit('update:modelValue', $event.target.value)" v-bind="$attrs"
-            :class="['w-full rounded-lg border border-slate-700 bg-slate-800 p-3 text-white', variants[variant] ?? variants.primary]" />
+            :class="['w-full rounded-lg border border-slate-700 bg-slate-800 p-3 ', variants[variant] ?? variants.primary]" />
     </div>
 
 </template>
