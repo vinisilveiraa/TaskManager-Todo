@@ -54,14 +54,16 @@ namespace ToDoApi.Controllers
             return NoContent();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, User user)
+        public async Task<IActionResult> Put(int id, UpdateUserRequestDto newUser)
         {
-            var exists = await _repository.ExistsAsync(id);
-            if (!exists)
+            var user = await _repository.GetByIdAsync(id);
+            if (user == null)
                 return NotFound($"User with ID {id} not found.");
 
+            user.UserName = newUser.UserName;
+
             await _repository.UpdateAsync(id, user);
-            return CreatedAtAction(nameof(GetById), new { id = user.Id }, user);
+            return Ok(user);
         }
         [HttpPost("avatar")]
         public async Task<IActionResult> UploadAvatar(IFormFile file)
@@ -82,7 +84,7 @@ namespace ToDoApi.Controllers
                 await _repository.UpdateAsync(userId, user);
 
                 if (currentAvatar != null)
-                    await _fileService.DeleteAvatarAsync(currentAvatar);
+                    _fileService.DeleteAvatar(currentAvatar);
 
                 return Ok(new { AvatarUrl = avatarUrl });
             }
@@ -100,7 +102,7 @@ namespace ToDoApi.Controllers
             if (user == null)
                 return NotFound($"User with ID {userId} not found.");
 
-            var response = new CurrentUserResponseDTO
+            var response = new CurrentUserResponseDto
             {
                 Id = userId,
                 UserName = user.UserName,

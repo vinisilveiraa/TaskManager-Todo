@@ -26,6 +26,6 @@ export async function patchItemStatus(id) {
 }
 
 export async function putItem(id, item) {
-    const response = await api.put(`/item/${id}`, item)
+    const response = await api.put(`/Item/${id}`, item)
     return response.data;
 }

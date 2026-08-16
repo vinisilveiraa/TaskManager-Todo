@@ -281,8 +281,8 @@
         "IsRequired": true
       },
       {
-        "Name": "user",
-        "Type": "ToDoApi.Models.User",
+        "Name": "newUser",
+        "Type": "ToDoApi.DTOs.User.UpdateUserRequestDto",
         "IsRequired": true
       }
     ],

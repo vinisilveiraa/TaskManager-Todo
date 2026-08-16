@@ -1,2 +1,2 @@
 wwwroot\uploads\avatars\5b0ed3dd-2a48-4ae2-8083-57de8da1d9d1.png
-wwwroot\uploads\avatars\119d10a5-162d-424d-902c-e0d32a0aa58e.jpg
+wwwroot\uploads\avatars\eb04c73f-d190-4c46-af9f-ee59287b36d3.jpg

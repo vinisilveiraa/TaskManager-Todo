@@ -2,7 +2,7 @@
 
 namespace ToDoApi.DTOs.User
 {
-    public class CurrentUserResponseDTO
+    public class CurrentUserResponseDto
     {
         public int Id { get; set; }
         public string UserName { get; set; }

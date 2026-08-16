@@ -1,7 +1,7 @@
 import { ref, computed } from "vue";
 import { getAccessToken } from "../utils/session";
 import { jwtDecode } from "jwt-decode";
-import { getCurrentUser, setAvatar } from '../services/userService'
+import { getCurrentUser, setAvatar, putUser } from '../services/userService'
 
 const user = ref(null);
 
@@ -47,6 +47,15 @@ export function useUser() {
         userRole.value === 1 ? "Admin" : userRole.value === 0 ? "User" : "Guest"
     );
 
+    async function update(id, user) {
+        try {
+            await putUser(id, user);
+            await loadUser();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     async function updateAvatar(file) {
         try {
             await setAvatar(file);
@@ -72,6 +81,7 @@ export function useUser() {
         isAdmin,
         isAuthenticated,
 
+        update,
         updateAvatar,
     };
 }

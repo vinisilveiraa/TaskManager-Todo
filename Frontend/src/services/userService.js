@@ -14,6 +14,11 @@ export async function setAvatar(file) {
     const formData = new FormData();
     formData.append("file", file); // transforma o file em uma requisicao multipart/form-data
 
-    const response = await api.post("/User/avatar", formData); 
+    const response = await api.post("/User/avatar", formData);
+    return response.data;
+}
+
+export async function putUser(id, user) {
+    const response = await api.put(`/User/${id}`, user);
     return response.data;
 }

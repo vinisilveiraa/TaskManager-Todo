@@ -43,7 +43,7 @@ namespace ToDoApi.Services
             return $"/uploads/avatars/{fileName}"; // retorna o caminho relativo do arquivo salvo
         }
 
-        public async Task<IActionResult> DeleteAvatarAsync(string avatarPath)
+        public IActionResult DeleteAvatar(string avatarPath)
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", avatarPath.TrimStart('/'));
 

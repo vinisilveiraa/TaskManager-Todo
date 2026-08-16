@@ -1,7 +1,9 @@
 <script setup>
+import { computed } from 'vue';
 
-defineProps({
+const props = defineProps({
     avatarUrl: String,
+    avatarPreview: String,
     editable: {
         type: Boolean,
         default: false
@@ -19,6 +21,21 @@ const sizes = {
     profile: "w-32 h-32 text-5xl"
 }
 
+const displayedAvatar = computed(() => {
+    return props.avatarPreview || props.avatarUrl;
+});
+
+const imageSrc = computed(() => {
+    if (!displayedAvatar.value) return null;
+
+    //
+    if (displayedAvatar.value.startsWith("blob:")) {
+        return displayedAvatar.value;
+    }
+
+    return `http://localhost:5122${displayedAvatar.value}`
+})
+
 </script>
 
 <template>
@@ -27,8 +44,7 @@ const sizes = {
         editable && 'cursor-pointer'
     ]" @click="editable && emit('click')">
 
-        <img v-if="avatarUrl" :src="`http://localhost:5122${avatarUrl}`" alt="Avatar"
-            class="h-full w-full object-cover" />
+        <img v-if="imageSrc" :src="imageSrc" alt="Avatar" class="h-full w-full object-cover" />
         <i v-else class="fa-solid fa-user text-slate-700 m-0"></i>
 
 

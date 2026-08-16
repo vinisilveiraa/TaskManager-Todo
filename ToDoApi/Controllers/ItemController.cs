@@ -103,17 +103,16 @@ namespace ToDoApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, UpdateItemRequestDto request)
         {
-            var exists = await _repository.ExistsAsync(id);
-            if (!exists)
-                return NotFound($"Item with ID {id} not found.");
-
             var item = await _repository.GetByIdAsync(id);
+
+            if (item == null)
+                return NotFound($"Item with ID {id} not found.");
 
             item.Title = request.Title;
             item.Description = request.Description;
 
             await _repository.UpdateAsync(id, item);
-            return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
+            return Ok(item);
         }
     }
 }

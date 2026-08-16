@@ -7,28 +7,20 @@
       "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\dtos\\user\\currentuserresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:dtos\\user\\currentuserresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:services\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\wwwroot\\uploads\\avatars\\5b0ed3dd-2a48-4ae2-8083-57de8da1d9d1.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:wwwroot\\uploads\\avatars\\5b0ed3dd-2a48-4ae2-8083-57de8da1d9d1.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\migrations\\20260814225533_added-avatarurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:migrations\\20260814225533_added-avatarurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\todoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:todoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\migrations\\20260814225533_added-avatarurl.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:migrations\\20260814225533_added-avatarurl.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,31 +30,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CurrentUserResponseDTO.cs",
-              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\DTOs\\User\\CurrentUserResponseDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\User\\CurrentUserResponseDTO.cs",
-              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\DTOs\\User\\CurrentUserResponseDTO.cs",
-              "RelativeToolTip": "DTOs\\User\\CurrentUserResponseDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "20260814225533_added-avatarurl.cs",
+              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Migrations\\20260814225533_added-avatarurl.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260814225533_added-avatarurl.cs",
+              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Migrations\\20260814225533_added-avatarurl.cs",
+              "RelativeToolTip": "Migrations\\20260814225533_added-avatarurl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T02:58:26.224Z"
+              "WhenOpened": "2026-08-16T19:54:30.166Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "5b0ed3dd-2a48-4ae2-8083-57de8da1d9d1.png - PNG [1080x1080, 24 bits, PNG]",
-              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\wwwroot\\uploads\\avatars\\5b0ed3dd-2a48-4ae2-8083-57de8da1d9d1.png",
-              "RelativeDocumentMoniker": "wwwroot\\uploads\\avatars\\5b0ed3dd-2a48-4ae2-8083-57de8da1d9d1.png",
-              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\wwwroot\\uploads\\avatars\\5b0ed3dd-2a48-4ae2-8083-57de8da1d9d1.png - PNG [1080x1080, 24 bits, PNG]",
-              "RelativeToolTip": "wwwroot\\uploads\\avatars\\5b0ed3dd-2a48-4ae2-8083-57de8da1d9d1.png - PNG [1080x1080, 24 bits, PNG]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2026-08-15T02:41:23.08Z",
-              "EditorCaption": " - PNG [1080x1080, 24 bits, PNG]"
+              "DocumentIndex": 4,
+              "Title": "20260814225533_added-avatarurl.Designer.cs",
+              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Migrations\\20260814225533_added-avatarurl.Designer.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260814225533_added-avatarurl.Designer.cs",
+              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Migrations\\20260814225533_added-avatarurl.Designer.cs",
+              "RelativeToolTip": "Migrations\\20260814225533_added-avatarurl.Designer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T19:54:24.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FileService.cs",
+              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Services\\FileService.cs",
+              "RelativeDocumentMoniker": "Services\\FileService.cs",
+              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Services\\FileService.cs",
+              "RelativeToolTip": "Services\\FileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T19:51:19.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ItemController.cs",
+              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\ItemController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ItemController.cs",
+              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\ItemController.cs",
+              "RelativeToolTip": "Controllers\\ItemController.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAiwGkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-16T19:42:50.43Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -72,58 +92,10 @@
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAswG8AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAqwFYAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-11T21:31:18.935Z",
+              "WhenOpened": "2026-08-16T18:23:10.585Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-13T20:39:28.885Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ToDoApi.csproj",
-              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\ToDoApi.csproj",
-              "RelativeDocumentMoniker": "ToDoApi.csproj",
-              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\ToDoApi.csproj",
-              "RelativeToolTip": "ToDoApi.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-08-13T20:38:34.239Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-13T20:36:21.424Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAA3wFgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-05T01:05:35.674Z"
             }
           ]
         }
