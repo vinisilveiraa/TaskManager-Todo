@@ -1,11 +1,15 @@
 <script setup>
 import { ref } from "vue";
+
 import BaseButton from "../ui/BaseButton.vue";
 import BaseInput from "../ui/BaseInput.vue"
 import UserAvatar from "./UserAvatar.vue";
 import ProfileChangePassword from "./ProfileChangePassword.vue";
-import { useUser } from "../../composables/useUser";
 
+import { useUser } from "../../composables/useUser";
+import { useToast } from "../../composables/useToast.js";
+
+const { success, error } = useToast();
 const { userId, userName, avatarUrl, updateAvatar, update } = useUser();
 
 const fileInput = ref(null);
@@ -26,10 +30,20 @@ function handleFileSelected(event) {
     avatarPreview.value = URL.createObjectURL(file);
 }
 
-function handleSubmit() {
+async function handleSubmit() {
     try {
-        if (selectedFile.value) {
-            updateAvatar(selectedFile.value);
+        const usernameChanged =
+            newUsername.value !== userName.value;
+
+        const avatarChanged =
+            selectedFile.value !== null;
+
+        if (!usernameChanged && !avatarChanged) {
+            return;
+        }
+
+        if (avatarChanged) {
+            await updateAvatar(selectedFile.value);
 
             URL.revokeObjectURL(avatarPreview.value);
 
@@ -37,12 +51,23 @@ function handleSubmit() {
             selectedFile.value = null;
         }
 
-        if (newUsername.value !== userName.value) {
-            update(userId.value, { UserName: newUsername.value, });
+        if (usernameChanged) {
+            await update(userId.value, {
+                UserName: newUsername.value
+            });
         }
 
-    } catch (error) {
-        console.log(error);
+        success(
+            "Perfil atualizado",
+            "Suas informações foram atualizadas com sucesso."
+        );
+
+    } catch (err) {
+        error(
+            "Erro ao atualizar perfil",
+            err.response?.data?.message ??
+            "Não foi possível atualizar seu perfil."
+        );
     }
 }
 
@@ -65,9 +90,8 @@ function handleCancel() {
                     <UserAvatar :avatar-url="avatarUrl" :avatar-preview="avatarPreview" :editable="true"
                         @click="openFilePicker" />
 
-                    <BaseInput label="Nome de Usuario" :modelValue="userName" v-model="newUsername" 0 />
+                    <BaseInput label="Nome de Usuario" :modelValue="userName" v-model="newUsername" 0 required />
                     <!-- <BaseInput label="Email" :modelValue="userName" /> -->
-
 
                     <input ref="fileInput" type="file" accept="image/jpeg,image/png,image/webp" class="hidden"
                         @change="handleFileSelected" />

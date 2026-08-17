@@ -35,7 +35,7 @@ namespace ToDoApi.Controllers
         {
             var result = await _jwtService.Authenticate(request);
             if (result is null)
-                return Unauthorized(new { message = "Invalid credentials" });
+                return Unauthorized(new { message = "Credenciais Inválidas" });
             return Ok(result);
         }
         [AllowAnonymous]

@@ -1,7 +1,7 @@
 import { ref, computed } from "vue";
 import { getAccessToken } from "../utils/session";
 import { jwtDecode } from "jwt-decode";
-import { getCurrentUser, setAvatar, putUser } from '../services/userService'
+import { getCurrentUser, setAvatar, putUser, patchPassword } from '../services/userService'
 
 const user = ref(null);
 
@@ -48,21 +48,18 @@ export function useUser() {
     );
 
     async function update(id, user) {
-        try {
-            await putUser(id, user);
-            await loadUser();
-        } catch (error) {
-            console.log(error);
-        }
+        await putUser(id, user);
+        await loadUser();
     }
 
     async function updateAvatar(file) {
-        try {
-            await setAvatar(file);
-            await loadUser();
-        } catch (error) {
-            console.error(error);
-        }
+        await setAvatar(file);
+        await loadUser();
+    }
+
+    async function changePassword(request) {
+        await patchPassword(request);
+        await loadUser();
     }
 
     return {
@@ -83,5 +80,6 @@ export function useUser() {
 
         update,
         updateAvatar,
+        changePassword,
     };
 }

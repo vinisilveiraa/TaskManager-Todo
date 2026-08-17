@@ -4,8 +4,7 @@ import ProfileHeader from "../components/user/ProfileHeader.vue";
 import UserProfile from "../components/user/UserProfile.vue";
 import ProfileEdit from "../components/user/ProfileEdit.vue";
 
-// const activeTab = ref('profile');
-const activeTab = ref('edit');
+const activeTab = ref('profile');
 
 function changeTab(tab) {
     activeTab.value = tab;

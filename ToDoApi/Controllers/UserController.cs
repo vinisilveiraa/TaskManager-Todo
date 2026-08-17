@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using ToDoApi.DTOs.User;
 using ToDoApi.Helpers;
 using ToDoApi.Models;
@@ -15,10 +16,15 @@ namespace ToDoApi.Controllers
     {
         private readonly UserRepository _repository;
         private readonly FileService _fileService;
-        public UserController(UserRepository repository, FileService fileService)
+        private readonly PasswordHashService _passwordService;
+        public UserController(
+            UserRepository repository,
+            FileService fileService,
+            PasswordHashService passwordService)
         {
             _repository = repository;
             _fileService = fileService;
+            _passwordService = passwordService;
         }
 
         [HttpGet]
@@ -112,6 +118,25 @@ namespace ToDoApi.Controllers
             };
 
             return Ok(response);
+        }
+        [HttpPatch("me/password")]
+        public async Task<IActionResult> patchPassword(ChangePasswordRequestDto request)
+        {
+            var userId = User.GetUserId();
+            var user = await _repository.GetByIdAsync(userId);
+
+            if (user == null)
+                return NotFound();
+
+            var match = _passwordService.VerifyPassword(request.oldPassword, user.Password);
+
+            if (!match)
+                return BadRequest($"Passwords doesnt match");
+
+            user.Password = _passwordService.HashPassword(request.newPassword);
+            await _repository.UpdateAsync(userId, user);
+
+            return Ok();
         }
     }
 }
