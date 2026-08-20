@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\dtos\\user\\changepasswordrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:dtos\\user\\changepasswordrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\dtos\\profile\\profilestatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:dtos\\profile\\profilestatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Title": "ProfileService.cs",
+              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Services\\ProfileService.cs",
+              "RelativeDocumentMoniker": "Services\\ProfileService.cs",
+              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Services\\ProfileService.cs",
+              "RelativeToolTip": "Services\\ProfileService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T21:55:52.169Z",
+              "WhenOpened": "2026-08-20T21:32:19.636Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ChangePasswordRequestDto.cs",
-              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\DTOs\\User\\ChangePasswordRequestDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\User\\ChangePasswordRequestDto.cs",
-              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\DTOs\\User\\ChangePasswordRequestDto.cs",
-              "RelativeToolTip": "DTOs\\User\\ChangePasswordRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAvAAAAAAAAAA==",
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T20:58:34.735Z",
+              "WhenOpened": "2026-08-20T21:18:33.508Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAuwHMAAAAhAAAAAAAAAA==",
+              "Title": "ProfileStatsDto.cs",
+              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\DTOs\\Profile\\ProfileStatsDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Profile\\ProfileStatsDto.cs",
+              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\DTOs\\Profile\\ProfileStatsDto.cs",
+              "RelativeToolTip": "DTOs\\Profile\\ProfileStatsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T18:23:10.585Z",
+              "WhenOpened": "2026-08-20T21:02:27.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T19:53:36.286Z",
               "EditorCaption": ""
             }
           ]

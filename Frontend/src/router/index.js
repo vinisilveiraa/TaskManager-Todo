@@ -4,11 +4,17 @@ import { getAccessToken } from '../utils/session.js';
 import { useUser } from '../composables/useUser.js';
 
 import HomeView from '../views/HomeView.vue';
+
 import LoginView from '../views/LoginView.vue';
-import TodoView from '../views/TodoView.vue';
-import DashboardView from '../views/DashboardView.vue';
 import RegisterView from '../views/RegisterView.vue';
+
+import TodoView from '../views/TodoView.vue';
+
+import DashboardView from '../views/DashboardView.vue';
+
 import UserProfileView from '../views/UserProfileView.vue';
+import UserProfile from '../components/user/UserProfile.vue';
+import ProfileEdit from '../components/user/ProfileEdit.vue';
 
 const { userRole, isAuthenticated } = useUser();
 
@@ -38,6 +44,22 @@ const router = createRouter({
         {
             path: '/me',
             component: UserProfileView,
+            children: [
+                {
+                    path: '',
+                    redirect: '/me/profile'
+                },
+                {
+                    path: 'profile',
+                    name: 'profile',
+                    component: UserProfile
+                },
+                {
+                    path: 'edit',
+                    name: 'edit',
+                    component: ProfileEdit
+                }
+            ],
             meta: {
                 requiresAuth: true
             }

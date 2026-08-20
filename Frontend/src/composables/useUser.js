@@ -1,18 +1,31 @@
 import { ref, computed } from "vue";
 import { getAccessToken } from "../utils/session";
 import { jwtDecode } from "jwt-decode";
-import { getCurrentUser, setAvatar, putUser, patchPassword } from '../services/userService'
+import { getCurrentUser, setAvatar, putUser, patchPassword, getUserStats } from '../services/userService'
 
 const user = ref(null);
+const loadingStats = ref(false)
 
 export function useUser() {
+    const stats = ref(null);
 
     async function loadUser() {
         try {
             user.value = await getCurrentUser();
         } catch (error) {
-            console.error("Erro ao carregar usuário:", error);
             user.value = null;
+        }
+    }
+
+    const loadStats = async () => {
+        loadingStats.value = true
+        try {
+            stats.value = await getUserStats();
+        } catch (error) {
+            stats.value = null;
+        }
+        finally {
+            loadingStats.value = false;
         }
     }
 
@@ -81,5 +94,10 @@ export function useUser() {
         update,
         updateAvatar,
         changePassword,
+
+        stats,
+        loadStats,
+        
+        loadingStats
     };
 }

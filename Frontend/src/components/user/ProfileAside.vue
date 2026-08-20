@@ -10,7 +10,6 @@ const { userName, userRoleString, avatarUrl, updateAvatar } = useUser();
 </script>
 
 <template>
-    <aside class="w-64 shrink-0 rounded-xl bg-slate-800 p-6">
         <div class="flex flex-col items-center">
 
             <div class="group relative">
@@ -27,5 +26,4 @@ const { userName, userRoleString, avatarUrl, updateAvatar } = useUser();
                 {{ userRoleString }}
             </p>
         </div>
-    </aside>
 </template>

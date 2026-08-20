@@ -210,6 +210,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ToDoApi.Controllers.ProfileController",
+    "Method": "getStats",
+    "RelativePath": "api/Profile/me/stats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ToDoApi.Controllers.UserController",
     "Method": "GetAllItems",
     "RelativePath": "api/User",

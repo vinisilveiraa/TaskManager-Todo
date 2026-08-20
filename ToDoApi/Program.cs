@@ -26,6 +26,7 @@ builder.Services.AddScoped<RefreshTokenRepository>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<FileService>();
 builder.Services.AddScoped<PasswordHashService>();
+builder.Services.AddScoped<ProfileService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

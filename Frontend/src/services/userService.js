@@ -24,7 +24,11 @@ export async function putUser(id, user) {
 }
 
 export async function patchPassword(request) {
-    console.log(request)
     const response = await api.patch("/User/me/password", request);
+    return response.data;
+}
+
+export async function getUserStats() {
+    const response = await api.get("/Profile/me/stats")
     return response.data;
 }
