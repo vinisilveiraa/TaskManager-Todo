@@ -1,8 +1,7 @@
 <script setup>
 import { ref } from "vue";
-
 import BaseButton from "../ui/BaseButton.vue";
-import BaseInput from "../ui/BaseInput.vue"
+import BaseInput from "../ui/BaseInput.vue";
 import UserAvatar from "./UserAvatar.vue";
 import ProfileChangePassword from "./ProfileChangePassword.vue";
 
@@ -13,13 +12,13 @@ const { success, error } = useToast();
 const { userId, userName, avatarUrl, updateAvatar, update } = useUser();
 
 const fileInput = ref(null);
-const newUsername = ref(userName.value);
+const newUsername = ref(userName.value || '');
 
 const avatarPreview = ref(null);
 const selectedFile = ref(null);
 
 function openFilePicker() {
-    fileInput.value.click();
+    fileInput.value?.click();
 }
 
 function handleFileSelected(event) {
@@ -32,85 +31,81 @@ function handleFileSelected(event) {
 
 async function handleSubmit() {
     try {
-        const usernameChanged =
-            newUsername.value !== userName.value;
+        const usernameChanged = newUsername.value !== userName.value;
+        const avatarChanged = selectedFile.value !== null;
 
-        const avatarChanged =
-            selectedFile.value !== null;
-
-        if (!usernameChanged && !avatarChanged) {
-            return;
-        }
+        if (!usernameChanged && !avatarChanged) return;
 
         if (avatarChanged) {
             await updateAvatar(selectedFile.value);
-
             URL.revokeObjectURL(avatarPreview.value);
-
             avatarPreview.value = null;
             selectedFile.value = null;
         }
 
         if (usernameChanged) {
-            await update(userId.value, {
-                UserName: newUsername.value
-            });
+            await update(userId.value, { UserName: newUsername.value });
         }
 
         success(
             "Perfil atualizado",
             "Suas informações foram atualizadas com sucesso."
         );
-
     } catch (err) {
         error(
             "Erro ao atualizar perfil",
-            err.response?.data?.message ??
-            "Não foi possível atualizar seu perfil."
+            err.response?.data?.message ?? "Não foi possível atualizar seu perfil."
         );
     }
 }
 
 function handleCancel() {
-    window.location.reload();
+    newUsername.value = userName.value;
+    if (avatarPreview.value) {
+        URL.revokeObjectURL(avatarPreview.value);
+        avatarPreview.value = null;
+    }
+    selectedFile.value = null;
 }
-
 </script>
 
 <template>
-    <section class="flex-1 rounded-xl bg-slate-800 p-8 mb-5">
-        <h1 class="text-2xl font-bold mb-5">
-            Editar Perfil
-        </h1>
+    <div class="space-y-6 max-w-4xl mx-auto">
 
-        <div class="">
-            <form class="w-full" @submit.prevent="handleSubmit">
+        <section class="rounded-2xl bg-slate-800 p-6 md:p-8 border border-slate-700/60 shadow-lg">
+            <h1 class="text-xl font-bold text-white mb-6 border-b border-slate-700/60 pb-3">
+                Editar Perfil
+            </h1>
 
-                <div class="flex gap-5">
-                    <UserAvatar :avatar-url="avatarUrl" :avatar-preview="avatarPreview" :editable="true"
-                        @click="openFilePicker" />
+            <form class="space-y-6" @submit.prevent="handleSubmit">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                    <div class="flex flex-col items-center gap-2">
+                        <UserAvatar :avatar-url="avatarUrl" :avatar-preview="avatarPreview" :editable="true"
+                            @click="openFilePicker" />
+                        <span class="text-xs text-slate-400">Clique para alterar</span>
+                    </div>
 
-                    <BaseInput label="Nome de Usuario" :modelValue="userName" v-model="newUsername" 0 required />
-                    <!-- <BaseInput label="Email" :modelValue="userName" /> -->
+                    <div class="flex-1 w-full">
+                        <BaseInput label="Nome de Usuário" v-model="newUsername" required />
+                    </div>
 
                     <input ref="fileInput" type="file" accept="image/jpeg,image/png,image/webp" class="hidden"
                         @change="handleFileSelected" />
                 </div>
 
-                <div class="flex justify-end gap-3 mx-4">
+                <div class="flex justify-end gap-3 pt-4 border-t border-slate-700/40">
                     <BaseButton @click="handleCancel" type="button" variant="danger">
                         Cancelar
                     </BaseButton>
-                    <BaseButton type="submit" variant="success">
-                        Salvar
+                    <BaseButton type="submit" variant="primary">
+                        Salvar Alterações
                     </BaseButton>
                 </div>
             </form>
-        </div>
-    </section>
-    <section class="flex-1 rounded-xl bg-slate-800 p-8 ">
+        </section>
 
-        <ProfileChangePassword />
-
-    </section>
+        <section class="rounded-2xl bg-slate-800 p-6 md:p-8 border border-slate-700/60 shadow-lg">
+            <ProfileChangePassword />
+        </section>
+    </div>
 </template>

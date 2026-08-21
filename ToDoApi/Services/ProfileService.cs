@@ -27,11 +27,46 @@ namespace ToDoApi.Services
                 today.Month,
                 1
             );
+            var daysInMonth = DateTime.DaysInMonth(
+                today.Year,
+                today.Month
+            );
 
             var completedThisWeek = tasks.Count(x => x.Completed_At > startOfWeek);
             var completedThisMonth = tasks.Count(x => x.Completed_At > startOfMonth);
 
             var completionRate = totalTasks == 0 ? 0 : (double)completedTasks / totalTasks * 100;
+
+
+            // Enumerable.Range faz uma sequencia de numeros de (start, limit)
+            // AddDays soma dias na data
+            var weeklyStats = Enumerable.Range(0, 7)
+                .Select(i =>
+                {
+                    var date = startOfWeek.AddDays(i);
+
+                    return new DailyTaskStatsDto
+                    {
+                        Date = date,
+                        completed = tasks.Count(x =>
+                        x.IsCompleted && x.Completed_At.HasValue && x.Completed_At.Value.Date == date
+                        )
+                    };
+                }).ToList();
+
+            var montlyStats = Enumerable.Range(0, daysInMonth)
+                .Select(i =>
+            {
+                var date = startOfMonth.AddDays(i);
+
+                return new DailyTaskStatsDto
+                {
+                    Date = date,
+                    completed = tasks.Count(x =>
+                    x.IsCompleted && x.Completed_At.HasValue && x.Completed_At.Value.Date == date
+                    )
+                };
+            }).ToList();
 
             return new ProfileStatsDto
             {
@@ -40,7 +75,10 @@ namespace ToDoApi.Services
                 PendingTasks = pendingTasks,
                 CompletedThisMonth = completedThisMonth,
                 CompletedThisWeek = completedThisWeek,
-                CompletionRate = completionRate
+                CompletionRate = completionRate,
+
+                MonthlyActivity = montlyStats,
+                WeeklyActivity = weeklyStats
             };
 
         }

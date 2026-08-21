@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\dtos\\profile\\dailytaskstatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:dtos\\profile\\dailytaskstatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\dtos\\profile\\profilestatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:dtos\\profile\\profilestatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{285B88BF-930E-4784-9060-B72FF69D94DA}|ToDoApi.csproj|c:\\meusprojetos\\taskmanager-todo\\todoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -36,7 +40,7 @@
               "RelativeDocumentMoniker": "Services\\ProfileService.cs",
               "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Services\\ProfileService.cs",
               "RelativeToolTip": "Services\\ProfileService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAQwCkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-20T21:32:19.636Z",
               "EditorCaption": ""
@@ -44,6 +48,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DailyTaskStatsDto.cs",
+              "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\DTOs\\Profile\\DailyTaskStatsDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Profile\\DailyTaskStatsDto.cs",
+              "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\DTOs\\Profile\\DailyTaskStatsDto.cs",
+              "RelativeToolTip": "DTOs\\Profile\\DailyTaskStatsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T12:55:03.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
@@ -62,14 +79,14 @@
               "RelativeDocumentMoniker": "DTOs\\Profile\\ProfileStatsDto.cs",
               "ToolTip": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\DTOs\\Profile\\ProfileStatsDto.cs",
               "RelativeToolTip": "DTOs\\Profile\\ProfileStatsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-20T21:02:27.331Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\MeusProjetos\\TaskManager-Todo\\ToDoApi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -77,8 +94,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-20T19:53:36.286Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-20T19:53:36.286Z"
             }
           ]
         }

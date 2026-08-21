@@ -3,7 +3,7 @@ import { useRouter } from "vue-router";
 import { useAuth } from "../../composables/useAuth";
 import { useUser } from "../../composables/useUser";
 
-import UserDropdown from "../user/UserDropdown.vue";
+import NavbarDropdown from "./NavbarDropdown.vue";
 
 const { logout } = useAuth();
 const { isAdmin, isAuthenticated } = useUser();
@@ -50,7 +50,7 @@ async function handleLogout() {
                     </RouterLink>
                 </div>
 
-                <UserDropdown v-else @logout="handleLogout" />
+                <NavbarDropdown v-else @logout="handleLogout" />
 
             </div>
         </div>

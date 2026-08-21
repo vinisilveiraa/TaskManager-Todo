@@ -2,8 +2,8 @@
 import { onMounted, onUnmounted, ref } from "vue";
 
 import BaseButton from "../ui/BaseButton.vue";
-import { useUser } from "../../composables/useUser";
-import UserAvatar from "./UserAvatar.vue";
+import { useUser } from "../../composables/useUser.js";
+import UserAvatar from "../user/UserAvatar.vue";
 
 const { userName, avatarUrl } = useUser();
 

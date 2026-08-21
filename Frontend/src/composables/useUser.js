@@ -4,10 +4,10 @@ import { jwtDecode } from "jwt-decode";
 import { getCurrentUser, setAvatar, putUser, patchPassword, getUserStats } from '../services/userService'
 
 const user = ref(null);
+const stats = ref(null);
 const loadingStats = ref(false)
 
 export function useUser() {
-    const stats = ref(null);
 
     async function loadUser() {
         try {
@@ -97,7 +97,7 @@ export function useUser() {
 
         stats,
         loadStats,
-        
+
         loadingStats
     };
 }

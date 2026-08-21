@@ -1,50 +1,51 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
+import BaseBadge from '../ui/BaseBadge.vue'
+
+import ProfileStats from "./ProfileStats.vue";
 import ProfileAside from "./ProfileAside.vue";
-import BaseSlot from "../ui/BaseSlot.vue"
-import BaseChart from "../ui/BaseChart.vue"
 
+import WeeklyStatsChart from "./WeeklyStatsChart.vue"
+import MonthlyStatsChart from "./MonthlyStatsChart.vue"
 import { useUser } from "../../composables/useUser.js";
 
-const { stats, loadStats, loadingStats: loading } = useUser();
+const { loadStats } = useUser();
 
 onMounted(() => {
     loadStats();
-})
+});
+
+const activeChart = ref('weekly')
+
+function changeChart(chart) {
+    activeChart.value = chart;
+}
 
 </script>
 
 <template>
-    <div class="flex gap-6">
+    <div class="flex items-start gap-6">
         <aside class="flex flex-col items-center justify-center">
-            <div class="w-64 shrink-0 rounded-xl bg-slate-800 p-6 mb-2">
-                <ProfileAside />
-            </div>
-
-            <div class="w-64 grid grid-cols-2 gap-2">
-                <BaseSlot :title="'Total'" :loading="loading">
-                    {{ stats?.totalTasks ?? 0 }}
-                </BaseSlot>
-                <BaseSlot :title="'Rate%'" :loading="loading">
-                    {{ stats?.completionRate ?? 0 }}<span class="text-sm">%</span>
-                </BaseSlot>
-                <BaseSlot :title="'Pendentes'" :loading="loading">
-                    {{ stats?.pendingTasks ?? 0 }}
-                </BaseSlot>
-                <BaseSlot :title="'Completas'" :loading="loading">
-                    {{ stats?.completedTasks ?? 0 }}
-                </BaseSlot>
-            </div>
+            <ProfileAside />
+            <ProfileStats />
         </aside>
-
-
         <section class="flex-1 rounded-xl bg-slate-800 p-8">
-            <h1 class="text-2xl font-bold ">
-                Meus Status
+            <h1 class="text-2xl font-bold mb-4">
+                Status
             </h1>
 
-            <BaseChart />
+            <div class="flex justify-center gap-2">
+                <BaseBadge @click="changeChart('weekly')" :variant="activeChart == 'weekly' ? 'primary' : 'disabled'">
+                    Semanal
+                </BaseBadge>
+                <BaseBadge @click="changeChart('monthly')" :variant="activeChart == 'monthly' ? 'primary' : 'disabled'">
+                    Mensal
+                </BaseBadge>
+            </div>
+
+            <WeeklyStatsChart v-if="activeChart == 'weekly'" />
+            <MonthlyStatsChart v-if="activeChart == 'monthly'" />
         </section>
     </div>
 </template>
